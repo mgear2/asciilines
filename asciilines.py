@@ -17,11 +17,13 @@ class Canvas():
     rows = int(data[0][0])
     columns = int(data[0][2])
     # https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python#2397192
-    canvas = [["." for y in range(rows+1)] for x in range(columns+1)]
+    canvas = [["." for y in range(columns+1)] for x in range(rows+1)]
     self.canvas = canvas
     # https://stackoverflow.com/questions/10713004/find-length-of-2d-array-python#10713016
-    self.x = len(canvas)-1
-    self.y = len(canvas[0])-1
+    self.y = len(canvas)-1
+    self.x = len(canvas[0])-1
+    print("x: {}, y: {}".format(self.x, self.y))
+    print(canvas)
 
   def build(self):
     for index, line in enumerate(self.data):
@@ -29,12 +31,23 @@ class Canvas():
         continue
       lnlst = line.split(" ")
       to_render = lnlst[0]
+      row = int(lnlst[1])
+      col = int(lnlst[2])
+      length = int(lnlst[4])
       if lnlst[3] == "h":
-        for i in range(0, self.x):
-          self.canvas[int(lnlst[1])][i] = to_render
+        if length+col > self.x:
+          length = self.x
+        else:
+          length = length + col
+        for i in range(col, length):
+          self.canvas[row][i] = to_render
       elif lnlst[3] == "v":
-        for i in range(0, self.y):
-          self.canvas[i][int(lnlst[2])] = to_render
+        if length+row > self.y:
+            length = self.y
+        else:
+            length = length + row
+        for i in range(row, length):
+          self.canvas[i][col] = to_render
       else:
         sys.stderr.write(FORMAT_ERROR)
 
