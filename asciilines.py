@@ -66,7 +66,7 @@ class Canvas():
             sys.stdout.write("\n")
 
 if __name__ == "__main__":
-    usage = "python asciilines.py <tvg-file-path>"
+    usage = "Usage: python asciilines.py <tvg-file-path>"
     if len(sys.argv) != 2:
         print(usage)
     else:
