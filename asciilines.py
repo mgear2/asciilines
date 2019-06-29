@@ -28,11 +28,13 @@ class Canvas():
       if index == 0:
         continue
       lnlst = line.split(" ")
+      to_render = lnlst[0]
       if lnlst[3] == "h":
-        #for i in range 
-        pass
+        for i in range(0, self.x):
+          self.canvas[int(lnlst[1])][i] = to_render
       elif lnlst[3] == "v":
-        pass
+        for i in range(0, self.y):
+          self.canvas[i][int(lnlst[2])] = to_render
       else:
         sys.stderr.write(FORMAT_ERROR)
 
@@ -44,7 +46,6 @@ class Canvas():
 
 if __name__ == "__main__":
   usage = "asciilines.py <tvg-file-path>"
-  print(len(sys.argv))
   if len(sys.argv) != 2:
     print(usage)
   else:
