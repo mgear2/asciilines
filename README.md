@@ -1,4 +1,4 @@
-# CS561: ASCIILines  
+# ASCIILines  
 Copyright (c) 2019 Matthew Geary  
   
 ## Description  
