@@ -8,7 +8,7 @@ on stdout.
 The file to use is given to the program via stdin.  
   
 ## Usage  
-$ python asciilines.py <tvg-file-path>  
+`$ python asciilines.py <tvg-file-path>`  
 
 ## TVG Format
 Information on TVG Format drawn from  
