@@ -16,15 +16,14 @@ class Canvas():
     
         # https://stackoverflow.com/questions/3277503/how-to-read-a-file-line-by-line-into-a-list#3277516
         self.data = [line.rstrip('\n') for line in open(filename)]
-        rows = int(self.data[0][0])
-        columns = int(self.data[0][2])
+        size = self.data[0].split(" ")
+        rows = int(size[0])
+        columns = int(size[1])
         # https://stackoverflow.com/questions/2397141/how-to-initialize-a-two-dimensional-array-in-python#2397192
         self.canvas = [["." for y in range(columns+1)] for x in range(rows+1)]
         # https://stackoverflow.com/questions/10713004/find-length-of-2d-array-python#10713016
         self.y = len(self.canvas)-1
         self.x = len(self.canvas[0])-1
-        #print("x: {}, y: {}".format(self.x, self.y))
-        #print(canvas)
 
     def alter(self, hflag, line_len, primary, secondary, coord, to_render):
         """ Method used to alter a single line of the canvas based on tvg data"""
@@ -64,7 +63,7 @@ class Canvas():
         for i in range(0,self.y):
             for j in range(0,self.x):
                 sys.stdout.write(self.canvas[i][j])
-            print("\n")
+            sys.stdout.write("\n")
 
 if __name__ == "__main__":
     usage = "python asciilines.py <tvg-file-path>"
