@@ -9,7 +9,9 @@ The file to use is given to the program via stdin.
   
 ## Usage  
 `$ python asciilines.py <tvg-file-path>`  
-
+  
+Run `python asciilines.py --test` to do some simple testing.  
+  
 ## TVG Format
 Information on TVG Format drawn from  
 https://moodle.cs.pdx.edu/mod/assign/view.php?id=114  

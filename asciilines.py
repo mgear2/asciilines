@@ -4,6 +4,7 @@
 # distribution of this software for license terms.
 
 import sys
+from testasciilines import tests1to5
 
 class Canvas():
     """ Canvas class used to build and render a canvas from a tvg file """
@@ -66,9 +67,11 @@ class Canvas():
             sys.stdout.write("\n")
 
 if __name__ == "__main__":
-    usage = "Usage: python asciilines.py <tvg-file-path>"
+    usage = "Usage: python asciilines.py <tvg-file-path>\nTesting: python asciilines.py --test"
     if len(sys.argv) != 2:
         print(usage)
+    elif sys.argv[1] == "--test":
+        tests1to5()
     else:
         filename = sys.argv[1]
         canvas = Canvas()
