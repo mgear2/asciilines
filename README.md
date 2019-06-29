@@ -40,15 +40,15 @@ others should be ignored.
   
 Example: a TVG file containing  
   
-3 4  
-* 1 -1 h 5  
-# -1 1 v 5  
+`3 4`  
+`* 1 -1 h 5`  
+`# -1 1 v 5`  
   
 should render as  
   
-.#..  
-*#**  
-.#..  
+`.#..`  
+`*#**`  
+`.#..`  
   
 ## License  
   
